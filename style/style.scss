@@ -1,0 +1,16 @@
+@import "functions";
+@import "variables";
+@import "variables-dark";
+
+/* customize primary dark */
+$primary: #001199;
+
+[data-bs-theme="dark"] {
+  --bs-primary: #{$primary};
+  --bs-primary-bg-subtle: #{$primary};
+  --bs-primary-bg-subtle-dark: #{$primary};
+  
+  .btn-primary {
+    --bs-btn-bg: #{$primary};
+  }
+}
