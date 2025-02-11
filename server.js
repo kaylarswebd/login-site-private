@@ -12,7 +12,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 const sess = {
-  secret: 'miguel is super missed and we love him',
+  secret: 'Kyle is hot',
   cookie: {},
   resave: false,
   saveUninitialized: true,
