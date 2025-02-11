@@ -4,7 +4,7 @@ const session = require('express-session');
 const bodyParser = require('body-parser');
 
 
-const sequelize = require('./config/connection');
+const db = require('./config/connection');
 
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
@@ -30,6 +30,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 
 
-sequelize.sync({ force: false }).then(() => {
+db.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
