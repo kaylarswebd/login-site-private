@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS kyle_db;
+CREATE DATABASE kyle_db;
