@@ -4,9 +4,10 @@ const signupForm = async (event) => {
     const name = document.querySelector('#name-signup').value.trim();
     const email = document.querySelector('#email-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
+    const passwordRepeat = document.querySelector('#password-repeat-signup').value.trim();
     const checkbox = document.querySelector('#checkbox-signup').checked;
 
-    if (name && email && password && checkbox) {
+    if (name && email && (password==passwordRepeat) && checkbox) {
         const response = await fetch('/api/users', {
             method: 'POST',
             body: JSON.stringify({ name, email, password }),
