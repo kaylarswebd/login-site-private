@@ -4,8 +4,9 @@ const signupForm = async (event) => {
     const name = document.querySelector('#name-signup').value.trim();
     const email = document.querySelector('#email-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
+    const checkbox = document.querySelector('#checkbox-signup').checked;
 
-    if (name && email && password) {
+    if (name && email && password && checkbox) {
         const response = await fetch('/api/users', {
             method: 'POST',
             body: JSON.stringify({ name, email, password }),
@@ -14,10 +15,12 @@ const signupForm = async (event) => {
 
         if (response.ok) {
             alert('You are signed up, now log in!');
-            window.location.href = '/'
+            window.location.href = '/';
         } else {
             alert('Failed to sign up.');
         }
+    } else {
+        alert('Please fill out all fields and accept the terms.');
     }
 };
 
